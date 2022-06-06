@@ -44,7 +44,7 @@ def parse_template(text):
 
 
 
-    return  tuple (reslt),text1
+    return  text1 , tuple (reslt)
 
 print(parse_template("It was a {Adjective} and {Adjective} {Noun}."))
 
@@ -56,6 +56,23 @@ def merge(text,args):
 
 
 print(merge("I the {} and {} {}",("vgff","uguv","rzzrzs")))
+def git_input():
+    n=input("Enter item = ")
+    return n
+
+def all_game(file):
+    input_text=git_input()
+    text=read_template(file)
+    x,y=parse_template(text)
+
+    rslt = merge(x,input_text)
+    return rslt
+if __name__=="__main__":
+    all_game("file.txt")
+
+
+
+
 
 
 
