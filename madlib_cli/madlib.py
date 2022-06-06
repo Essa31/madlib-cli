@@ -6,10 +6,12 @@ def read_template(file):
     text_file=open(file,"r")
     rd=text_file.read()
     print(rd)
+
     text_file.close()
     return rd
 
-read_template("file.txt")
+# read_template("./file.txt")
+# read_template("./file.txt")
 
 def parse_template(text):
     cont_str = 0
@@ -67,8 +69,8 @@ def all_game(file):
 
     rslt = merge(x,input_text)
     return rslt
-if __name__=="__main__":
-    all_game("file.txt")
+# if __name__=="__main__":
+    # all_game("file.txt")
 
 
 
