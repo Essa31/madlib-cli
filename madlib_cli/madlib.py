@@ -6,12 +6,12 @@ def read_template(file):
     # file=Extension of the file
     text_file=open(file,"r")
     rd=text_file.read()
-    print(rd)
+    
 
     text_file.close()
     return rd
 
-
+# read_template("file.txt")
 #function extracts the word between {} and puts it in a tuple and makes it empty
 def parse_template(text):
     #text = The text you want to edit
@@ -45,7 +45,7 @@ def parse_template(text):
     #return edited text
     return  text1 , tuple (reslt)
 
-print(parse_template("It was a {Adjective} and {Adjective} {Noun}."))
+# print(parse_template("It was a {Adjective} and {Adjective} {Noun}."))
 
 
 #Function: Fill in the information you want to enter in the text
@@ -59,18 +59,20 @@ def merge(text,args):
     return text1_merge
 
 
-print(merge("I the {} and {} {}",("vgff","uguv","rzzrzs")))
+# print(merge("I the {} and {} {}",("vgff","uguv","rzzrzs")))
 
 
 def all_game(file,item):
 
     text=read_template(file)
+
     x,y=parse_template(text)
 
-    rslt = merge(x,*item)
+    rslt = merge(x,item)
     return rslt
-# if __name__=="__main__":
-    # all_game("file.txt")
+print(all_game("file.txt",("vgff","uguv","rzzrzs")))
+if __name__=="__main__":
+    all_game("file.txt",("vgff","uguv","rzzrzs"))
 
 
 
