@@ -1,8 +1,9 @@
 
 import re
 
-
+#function can return the text in the file
 def read_template(file):
+    # file=Extension of the file
     text_file=open(file,"r")
     rd=text_file.read()
     print(rd)
@@ -10,10 +11,10 @@ def read_template(file):
     text_file.close()
     return rd
 
-# read_template("./file.txt")
-# read_template("./file.txt")
 
+#function extracts the word between {} and puts it in a tuple and makes it empty
 def parse_template(text):
+    #text = The text you want to edit
     cont_str = 0
     cont_end = 0
     reslt=[]
@@ -41,33 +42,32 @@ def parse_template(text):
 
             text1 = text1.replace(i, "")
 
-
-
-
-
-
+    #return edited text
     return  text1 , tuple (reslt)
 
 print(parse_template("It was a {Adjective} and {Adjective} {Noun}."))
 
+
+#Function: Fill in the information you want to enter in the text
 def merge(text,args):
 
+#text=The text in which you want to enter the information
+#args=The information you want to enter
 
     text1_merge=text.format(*args)
+#The text after placing the information in it
     return text1_merge
 
 
 print(merge("I the {} and {} {}",("vgff","uguv","rzzrzs")))
-def git_input():
-    n=input("Enter item = ")
-    return n
 
-def all_game(file):
-    input_text=git_input()
+
+def all_game(file,item):
+
     text=read_template(file)
     x,y=parse_template(text)
 
-    rslt = merge(x,input_text)
+    rslt = merge(x,*item)
     return rslt
 # if __name__=="__main__":
     # all_game("file.txt")
